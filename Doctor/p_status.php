@@ -31,6 +31,7 @@ include('add.php')
 include "navbar.php";
 ?>
 
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -38,10 +39,44 @@ include "navbar.php";
                 <div class="card-header text-center">Application for approval</div>
                 <div class="card-body">
                     <form class="" action="add.php" method="post" enctype="multipart/form-data">
+                        
+                        <?php
+                            $sql = "select * from signup";
+                            $result = mysqli_query($conn, $sql);
+                    		    if(mysqli_num_rows($result)){
+                    				while($row = mysqli_fetch_assoc($result)){
+                        ?>
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" name="name"  placeholder="Enter your name" value="<?php echo $row['name'] ?> ">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Email</label>
+                            <input type="text" class="form-control" name="email"  placeholder="Enter your name" value="<?php echo $row['email'] ?> ">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Contact</label>
+                            <input type="number" class="form-control" name="contact"  placeholder="Enter your name" value="<?php echo $row['contact'] ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Address</label>
+                            <input type="text" class="form-control" name="address"  placeholder="Enter your name" value="<?php echo $row['address'] ?>, <?php echo $row['city'] ?>, <?php echo $row['zip'] ?>">
+                        </div>
+
+                        <?php
+                              }
+                            }
+                          ?>
+
                         <div class="form-group">
                             <label for="name">Qualification</label>
                             <input type="text" class="form-control" name="qualifi"  placeholder="Enter Qualification" value="">
                         </div>
+
                         <div class="form-group">
                             <label for="contact">Specialization:</label>
                             <input type="text" class="form-control" name="speciali" placeholder="Enter Specialization" value="">

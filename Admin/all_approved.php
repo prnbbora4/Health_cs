@@ -56,20 +56,23 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">All Applications</div>
-                      <div class="card-body">
+                    <div class="card-header" style="width:100%">All Approved</div>
+                      <div class="card-body" style="width:100%">
                       <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Name</th>
+                                <th>Contact</th>
+                                <th>Address</th>
                                 <th>Qualification</th>
-                                <th>Specialization</th>
+                                <!-- <th>Specialization</th> -->
                                 <th>Experience</th>
-                                <th>Symptoms</th>
-                                <th>Image</th>
-                                <th>Image1</th>
-                                <th>Image2</th>
-                                <th>Image3</th>
+                                <!-- <th>Symptoms</th> -->
+                                <th>Q_Cert</th>
+                                <th>Ex_Cert</th>
+                                <th>Photo</th>
+                                <th>ID</th>
                                 <th>Delete</th>
 
                             </tr>
@@ -97,10 +100,11 @@
                           ?>
                           <tr>
                             <td><?php echo $row['id'] ?></td>
+                            <td><?php echo $row['name'] ?></td>
+                            <td><?php echo $row['contact'] ?></td>
+                            <td><?php echo $row['address'] ?></td>
                             <td><?php echo $row['qualifi'] ?></td>
-                            <td><?php echo $row['speciali'] ?></td>
                             <td><?php echo $row['experience'] ?></td>
-                            <td><?php echo $row['symptoms'] ?></td>
                             <td><img src="<?php echo $upload_dir.$row['image'] ?>" height="40"> <a href="<?php echo $upload_dir.$row['image'] ?>">View</a> </td>
                             <td><img src="<?php echo $upload_dir.$row['image1'] ?>" height="40"> <a href="<?php echo $upload_dir.$row['image1'] ?>">View</a> </td>
                             <td><img src="<?php echo $upload_dir.$row['image2'] ?>" height="40"> <a href="<?php echo $upload_dir.$row['image2'] ?>">View</a> </td>

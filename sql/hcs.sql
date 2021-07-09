@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2021 at 09:58 AM
+-- Generation Time: Jul 09, 2021 at 08:57 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -48,6 +48,10 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 
 CREATE TABLE `approved` (
   `id` int(11) NOT NULL,
+  `name` varchar(60) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `contact` bigint(11) NOT NULL,
+  `address` varchar(100) NOT NULL,
   `qualifi` varchar(60) NOT NULL,
   `speciali` varchar(60) NOT NULL,
   `experience` int(11) NOT NULL,
@@ -58,6 +62,13 @@ CREATE TABLE `approved` (
   `image2` varchar(255) NOT NULL,
   `image3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `approved`
+--
+
+INSERT INTO `approved` (`id`, `name`, `email`, `contact`, `address`, `qualifi`, `speciali`, `experience`, `symptoms`, `keywords`, `image`, `image1`, `image2`, `image3`) VALUES
+(5, 'payel ', 'payel@gmail.com ', 678, 'yuiook, ghy, 6778', 'BAMS', 'Skin', 3, 'rashes', 'Skin, rashes', '1625811348_2293.png', '1625811348_5158.png', '1625811348_9764.png', '1625811348_8679.png');
 
 -- --------------------------------------------------------
 
@@ -67,6 +78,10 @@ CREATE TABLE `approved` (
 
 CREATE TABLE `p_status` (
   `id` int(11) NOT NULL,
+  `name` varchar(60) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `contact` bigint(11) NOT NULL,
+  `address` varchar(100) NOT NULL,
   `qualifi` varchar(60) NOT NULL,
   `speciali` varchar(60) NOT NULL,
   `experience` int(11) NOT NULL,
@@ -77,6 +92,14 @@ CREATE TABLE `p_status` (
   `image2` varchar(255) NOT NULL,
   `image3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `p_status`
+--
+
+INSERT INTO `p_status` (`id`, `name`, `email`, `contact`, `address`, `qualifi`, `speciali`, `experience`, `symptoms`, `keywords`, `image`, `image1`, `image2`, `image3`) VALUES
+(3, '', '', 0, '', 'BAMS', 'Skin', 3, 'rashes', 'Skin, rashes', '1625811149_7362.jpg', '1625811149_3042.png', '1625811149_7357.png', '1625811149_9605.png'),
+(4, 'payel ', '', 0, '', 'BAMS', 'Skin', 3, 'rashes', 'Skin, rashes', '1625811266_8667.jpg', '1625811266_3155.png', '1625811266_6749.png', '1625811266_3826.png');
 
 -- --------------------------------------------------------
 
@@ -152,13 +175,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `approved`
 --
 ALTER TABLE `approved`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `p_status`
 --
 ALTER TABLE `p_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `signup`
