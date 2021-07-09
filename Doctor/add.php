@@ -7,6 +7,12 @@
     // $contact = $_POST['contact'];
     // $email = $_POST['email'];
 
+
+	$name = $_POST['name'];
+    $email = $_POST['email'];
+    $contact = $_POST['contact'];
+    $address = $_POST['address'];
+	
 	$qualifi = $_POST['qualifi'];
     $speciali = $_POST['speciali'];
     $experience = $_POST['experience'];
@@ -109,8 +115,8 @@
 
 
 		if(!isset($errorMsg)){
-			$sql = "insert into p_status(qualifi, speciali, experience, symptoms, keywords, image, image1, image2, image3)
-					values('".$qualifi."', '".$speciali."', '".$experience."', '".$symptoms."', '".$keywords."', '".$userPic."', '".$userPic1."', '".$userPic2."', '".$userPic3."')";
+			$sql = "insert into p_status(name, email, contact, address, qualifi, speciali, experience, symptoms, keywords, image, image1, image2, image3)
+					values('".$name."', '".$email."', '".$contact."', '".$address."', '".$qualifi."', '".$speciali."', '".$experience."', '".$symptoms."', '".$keywords."', '".$userPic."', '".$userPic1."', '".$userPic2."', '".$userPic3."')";
 			$result = mysqli_query($conn, $sql);
 			if($result){
 				$successMsg = 'New record added successfully';
